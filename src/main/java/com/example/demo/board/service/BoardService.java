@@ -4,6 +4,8 @@ import com.example.demo.board.domain.Board;
 import com.example.demo.board.map.BoardRepository;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class BoardService {
     /**
@@ -45,5 +47,9 @@ public class BoardService {
         return boardRepository.getBoard(Idx);
     }
 
+
+    public List<Board> getBoardList(){
+        return boardRepository.getBoardList();
+    }
 
 }
