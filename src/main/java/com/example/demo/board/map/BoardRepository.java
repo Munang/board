@@ -8,4 +8,6 @@ public interface BoardRepository {
     public Board getBoard(String Idx);
 
     public List<Board> getBoardList();
+
+    public void insertBoard(Board board);
 }

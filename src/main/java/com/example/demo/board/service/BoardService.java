@@ -3,9 +3,10 @@ package com.example.demo.board.service;
 import com.example.demo.board.domain.Board;
 import com.example.demo.board.map.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 @RequiredArgsConstructor
 public class BoardService {
     /**
@@ -31,6 +32,7 @@ public class BoardService {
     // 변하지 않는다는 걸 강조하기 위해 final을 사용
     public final BoardRepository boardRepository;
 
+
     /**
      * RequiredArgsConstructor: final로된 필드를 포함한 생성자를 자동으로 생성
      * Autowired를 안써도 되는 이유: Spring 규칙 상, 생성자가 1개면 자동적용
@@ -50,6 +52,10 @@ public class BoardService {
 
     public List<Board> getBoardList(){
         return boardRepository.getBoardList();
+    }
+
+    public void insertBoard(Board board){
+        boardRepository.insertBoard(board);
     }
 
 }
