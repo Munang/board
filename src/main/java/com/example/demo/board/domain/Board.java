@@ -14,6 +14,7 @@ public class Board {
     private String name;
     private LocalDateTime createDate;
     private int read;
+    private String deleteYn;
     private Long memberId;
 
 }

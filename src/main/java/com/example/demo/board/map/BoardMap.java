@@ -4,10 +4,7 @@ import com.example.demo.board.domain.Board;
 import lombok.Builder;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class BoardMap implements BoardRepository {
@@ -23,7 +20,15 @@ public class BoardMap implements BoardRepository {
 
     @Override
     public List<Board> getBoardList() {
-        List<Board> boards = boardHashMap.values().stream().toList();
+        List<Board> boards = new ArrayList<>();
+
+        for (Board board: boardHashMap.values()
+             ) {
+            if (!board.getDeleteYn().equals("Y")){
+                boards.add(board);
+            }
+        }
+        // 이렇게 되면, 게시글이 1000개 100000개로 넘어가면 어떻게 하지?
         return boards;
     }
 
@@ -37,6 +42,16 @@ public class BoardMap implements BoardRepository {
             maxKey = Collections.max(boardHashMap.keySet()) + 1;
         }
         boardHashMap.put(maxKey, board);
+    }
+
+    @Override
+    public void deleteBoard(String Idx){
+        for (String boardIdx: boardHashMap.keySet()
+        ) {
+            if (!boardIdx.equals(Idx)){
+                boardHashMap.get(boardIdx).setDeleteYn("Y");
+            }
+        }
     }
 
 }

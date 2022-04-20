@@ -10,4 +10,6 @@ public interface BoardRepository {
     public List<Board> getBoardList();
 
     public void insertBoard(Board board);
+
+    public void deleteBoard(String Idx);
 }

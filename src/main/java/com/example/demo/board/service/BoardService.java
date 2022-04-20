@@ -58,4 +58,8 @@ public class BoardService {
         boardRepository.insertBoard(board);
     }
 
+    public void deleteBoard(String Idx){
+        boardRepository.deleteBoard(Idx);
+    }
+
 }

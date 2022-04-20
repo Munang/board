@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/")
 public class BoardController {
@@ -35,7 +35,13 @@ public class BoardController {
     @PostMapping("/boardInsert")
     public String insertBoard(@RequestBody Board board){
         boardService.insertBoard(board);
-        return "/board/hello";
+        return "Success";
+    }
+
+    @PostMapping("/boardDelete")
+    public String deleteBoard(@RequestParam String idx){
+        boardService.deleteBoard(idx);
+        return "Success";
     }
 
 }
