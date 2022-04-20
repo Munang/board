@@ -1,7 +1,7 @@
 package com.example.demo.board.service;
 
 import com.example.demo.board.domain.Board;
-import com.example.demo.board.map.BoardRepository;
+import com.example.demo.board.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

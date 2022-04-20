@@ -1,4 +1,4 @@
-package com.example.demo.board.map;
+package com.example.demo.board.repository;
 
 import com.example.demo.board.domain.Board;
 
