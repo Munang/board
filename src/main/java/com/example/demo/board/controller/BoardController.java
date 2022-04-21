@@ -45,7 +45,7 @@ public class BoardController {
         // 201: Created 이게 더 명확!
     }
 
-    @PostMapping("/boardDelete")
+    @DeleteMapping("/board")
     public ResponseEntity deleteBoard(@RequestParam String idx){
         boardService.deleteBoard(idx);
         return new ResponseEntity(HttpStatus.OK);
